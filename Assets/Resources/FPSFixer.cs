@@ -6,5 +6,4 @@ public class FPSFixer : MonoBehaviour
     {
         Application.targetFrameRate = 1000;
     }
-
 }
