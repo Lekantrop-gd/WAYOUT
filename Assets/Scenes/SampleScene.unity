@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 95035057}
   - component: {fileID: 95035056}
   - component: {fileID: 95035058}
+  - component: {fileID: 95035059}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -569,6 +570,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 29.002739, y: 27.063457}
   m_EdgeRadius: 0
+--- !u!50 &95035059
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95035055}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &104672684
 GameObject:
   m_ObjectHideFlags: 0
@@ -5455,6 +5483,7 @@ GameObject:
   - component: {fileID: 702134307}
   - component: {fileID: 702134306}
   - component: {fileID: 702134308}
+  - component: {fileID: 702134309}
   m_Layer: 0
   m_Name: Spikes (2)
   m_TagString: Untagged
@@ -5574,6 +5603,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.983732, y: 27.15373}
   m_EdgeRadius: 0
+--- !u!50 &702134309
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702134305}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &714936292
 GameObject:
   m_ObjectHideFlags: 0
@@ -9356,6 +9412,7 @@ GameObject:
   - component: {fileID: 1155380879}
   - component: {fileID: 1155380878}
   - component: {fileID: 1155380880}
+  - component: {fileID: 1155380881}
   m_Layer: 0
   m_Name: Spikes (3)
   m_TagString: Untagged
@@ -9475,6 +9532,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 29.28211, y: 27.504982}
   m_EdgeRadius: 0
+--- !u!50 &1155380881
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155380877}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1159646228
 GameObject:
   m_ObjectHideFlags: 0
@@ -12199,6 +12283,7 @@ GameObject:
   - component: {fileID: 1377378679}
   - component: {fileID: 1377378678}
   - component: {fileID: 1377378680}
+  - component: {fileID: 1377378681}
   m_Layer: 0
   m_Name: Spikes (1)
   m_TagString: Untagged
@@ -12318,6 +12403,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 29.13292, y: 27.329355}
   m_EdgeRadius: 0
+--- !u!50 &1377378681
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377378677}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1386819394
 GameObject:
   m_ObjectHideFlags: 0
