@@ -8,4 +8,9 @@ class ObstaclePresenter
     {
         _model = model;
     }
+
+    public int GetPosition()
+    {
+        return 12;
+    }
 }
