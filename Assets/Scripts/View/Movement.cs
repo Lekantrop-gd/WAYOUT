@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class MovementView : MonoBehaviour
+public abstract class Movement : MonoBehaviour
 {
     public virtual void SetPosition(Vector3 position) 
     {

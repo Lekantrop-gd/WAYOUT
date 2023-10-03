@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraMovementView : MovementView
+public class CameraMovementView : Movement
 {
 
 }

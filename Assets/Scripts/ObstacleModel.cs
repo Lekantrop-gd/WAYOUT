@@ -2,14 +2,18 @@
 
 class ObstacleModel
 {
-    private ObstacleView _view;
-    private bool _isMoving;
-    private Vector2 _movingDirection; 
+    public ObstacleView _obstacleView;
+    private Vector3 _obstaclePosition;
 
-    public ObstacleModel(ObstacleView view, bool isMoving, Vector2 movingDirection)
+    public ObstacleModel(ObstacleView obstacleView, Vector3 obstaclePosition)
     {
-        _view = view;
-        _isMoving = isMoving;
-        _movingDirection = movingDirection;
+        _obstacleView = obstacleView;
+        _obstaclePosition = obstaclePosition;
+    }
+
+    public void SetObstaclePosition(Vector3 obstaclePosition)
+    {
+        _obstaclePosition = obstaclePosition;
+        _obstacleView.SetPosition(obstaclePosition);
     }
 }
