@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-class ObstacleView : Obstacle
+class ObstacleView : MonoBehaviour, IMoveable
 {
     [SerializeField] private bool _isMoving;
     [SerializeField] private MovementDirection _movementDirection;
@@ -10,6 +10,16 @@ class ObstacleView : Obstacle
 
     private ObstaclePresenter _presenter;
     private ObstacleModel _model;
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
+
+    public void SetPosition(Vector3 position)
+    {
+        transform.position = position;
+    }
 
     private void Awake()
     {
@@ -24,11 +34,6 @@ class ObstacleView : Obstacle
         {
             _presenter.Move(transform.position, _movementSpeed);
         }
-    }
-
-    public override void Destroy()
-    {
-        Destroy(gameObject);
     }
 }
 
