@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent (typeof(LineRenderer))]
-public class TailView : MonoBehaviour
+public class TailView : View
 {
     [SerializeField] private Transform _joint;
     [SerializeField] private int _tailLenght;
