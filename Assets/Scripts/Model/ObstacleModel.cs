@@ -2,18 +2,18 @@
 
 class ObstacleModel
 {
-    public ObstacleView _obstacleView;
+    public View _view;
     private Vector3 _obstaclePosition;
 
-    public ObstacleModel(ObstacleView obstacleView, Vector3 obstaclePosition)
+    public ObstacleModel(View obstacleView, Vector3 obstaclePosition)
     {
-        _obstacleView = obstacleView;
+        _view = obstacleView;
         _obstaclePosition = obstaclePosition;
     }
 
     public void SetObstaclePosition(Vector3 obstaclePosition)
     {
         _obstaclePosition = obstaclePosition;
-        _obstacleView.SetPosition(obstaclePosition);
+        _view.SetPosition(obstaclePosition);
     }
 }
