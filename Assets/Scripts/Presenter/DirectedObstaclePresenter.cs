@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-class ObstaclePresenter
+class DirectedObstaclePresenter
 {
-    private ObstacleModel _model;
+    private DirectedObstacleModel _model;
     private Vector3 _targetPosition;
 
-    public ObstaclePresenter(ObstacleModel model)
+    public DirectedObstaclePresenter(DirectedObstacleModel model)
     {
         _model = model;
     }

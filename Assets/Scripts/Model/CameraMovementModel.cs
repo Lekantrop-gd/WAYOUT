@@ -14,6 +14,6 @@ public class CameraMovementModel
     public void SetPosition(Vector3 position)
     {
         _position = position;
-        _view.SetPosition(_position);
+        _view.UpdateView(_position);
     }
 }

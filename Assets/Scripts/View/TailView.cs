@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent (typeof(LineRenderer))]
+[RequireComponent(typeof(LineRenderer))]
 public class TailView : View
 {
     [SerializeField] private Transform _joint;

@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-class ObstacleModel
+class DirectedObstacleModel
 {
     public View _view;
     private Vector3 _obstaclePosition;
 
-    public ObstacleModel(View obstacleView, Vector3 obstaclePosition)
+    public DirectedObstacleModel(View obstacleView, Vector3 obstaclePosition)
     {
         _view = obstacleView;
         _obstaclePosition = obstaclePosition;
@@ -14,6 +14,6 @@ class ObstacleModel
     public void SetObstaclePosition(Vector3 obstaclePosition)
     {
         _obstaclePosition = obstaclePosition;
-        _view.SetPosition(obstaclePosition);
+        _view.UpdateView(obstaclePosition);
     }
 }

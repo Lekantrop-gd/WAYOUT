@@ -14,6 +14,6 @@ public class PlayerMovementModel
     public void SetPosition(Vector3 playerPosition)
     {
         _playerPosition = playerPosition;
-        _view.SetPosition(playerPosition);
+        _view.UpdateView(playerPosition);
     }
 }
