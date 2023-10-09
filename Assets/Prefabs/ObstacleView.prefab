@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7215385714797270925}
   - component: {fileID: 253951977285166460}
   m_Layer: 0
-  m_Name: TransformableObstacle
+  m_Name: ObstacleView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

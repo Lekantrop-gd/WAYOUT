@@ -19,9 +19,4 @@ public class PlayerMovementView : View
         Vector3 pointerPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _presenter.Move(pointerPosition, transform.position, _verticalSpeed, _horizontalSpeed);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(collision.gameObject);
-    }
 }
