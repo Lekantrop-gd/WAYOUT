@@ -8,6 +8,7 @@ public class DirectedObstacleView : View
     [SerializeField] private MovementDirection _movementDirection;
     [SerializeField] private float _movementDistance;
     [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _delay;
 
     private DirectedObstaclePresenter _presenter;
     private DirectedObstacleModel _model;
@@ -23,17 +24,20 @@ public class DirectedObstacleView : View
     {
         while (true)
         {
-            if (_isMoving)
-            {
-                _presenter.Move(transform.position, _movementSpeed);
-            }
-            //yield return new WaitForEndOfFrame();
+            _presenter.Move(transform.position, _movementSpeed);
+            yield return new WaitForEndOfFrame();
         }
+    }
+
+    private IEnumerator StartMovementOnDelay()
+    {
+        yield return new WaitForSeconds(_delay);
+        StartCoroutine(StartMovement());
     }
 
     private void OnBecameVisible()
     {
-        StartCoroutine(StartMovement());
+        StartCoroutine(StartMovementOnDelay());
     }
 }
 

@@ -42,9 +42,4 @@ public class TargetedObstacleView : View
             }
         }
     }
-
-    public void StartMovement()
-    {
-        StartCoroutine(StartMoving());
-    }
 }
