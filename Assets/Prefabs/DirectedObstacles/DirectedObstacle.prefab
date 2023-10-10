@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7215385714797270925}
   - component: {fileID: 253951977285166460}
   m_Layer: 0
-  m_Name: ObstacleView
+  m_Name: DirectedObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f45bd2cdcdbce041ab5586339daea92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isMoving: 1
-  _movementDirection: 2
-  _movementDistance: 10
-  _movementSpeed: 3
+  _isMoving: 0
   _isLooped: 0
+  _movementDirection: 3
+  _movementDistance: 0
+  _movementSpeed: 0

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+
 
 public class DirectedObstacleView : View
 {
@@ -6,15 +8,9 @@ public class DirectedObstacleView : View
     [SerializeField] private MovementDirection _movementDirection;
     [SerializeField] private float _movementDistance;
     [SerializeField] private float _movementSpeed;
-    [SerializeField] private bool _isLooped;
 
     private DirectedObstaclePresenter _presenter;
     private DirectedObstacleModel _model;
-
-    public void Destroy()
-    {
-        Destroy(gameObject);
-    }
 
     private void Awake()
     {
@@ -23,12 +19,21 @@ public class DirectedObstacleView : View
         _presenter.InitializeMove(_movementDirection, transform.position, _movementDistance);
     }
 
-    private void Update()
+    private IEnumerator StartMovement()
     {
-        if (_isMoving)
+        while (true)
         {
-            _presenter.Move(transform.position, _movementSpeed);
+            if (_isMoving)
+            {
+                _presenter.Move(transform.position, _movementSpeed);
+            }
+            //yield return new WaitForEndOfFrame();
         }
+    }
+
+    private void OnBecameVisible()
+    {
+        StartCoroutine(StartMovement());
     }
 }
 
