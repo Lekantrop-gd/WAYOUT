@@ -9,11 +9,9 @@ public class TargetedObstacleView : View
 
     private TargetedObstaclePresenter _presenter;
     private TargetedObstacleModel _model;
-    private Mesh _mesh;
 
     private void Awake()
     {
-        _mesh = GetComponent<Mesh>();
         _model = new TargetedObstacleModel(transform.position, _target.position, this);
         _presenter = new TargetedObstaclePresenter(_model);
     }
@@ -41,5 +39,12 @@ public class TargetedObstacleView : View
                 _target.position = _model.EndPosition;
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        BoxCollider2D collider = GetComponent<BoxCollider2D>();
+        Gizmos.DrawWireCube(_target.transform.position, new Vector2(collider.bounds.size.x, collider.bounds.size.y));
     }
 }

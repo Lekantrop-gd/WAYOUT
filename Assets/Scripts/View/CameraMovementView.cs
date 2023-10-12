@@ -19,4 +19,12 @@ public class CameraMovementView : View
     {
         _presenter.Move(transform.position, _player.transform.position, _offset, _speed);
     }
+
+    private void OnDrawGizmos()
+    {
+        Camera camera = Camera.main;
+        float halfHeight = camera.orthographicSize;
+        float halfWidth = camera.aspect * halfHeight;
+        Gizmos.DrawWireCube(transform.position, new Vector3(transform.position.x + halfWidth * 2, transform.position.y + 1000000000));
+    }
 }

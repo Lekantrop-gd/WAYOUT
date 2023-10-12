@@ -1,7 +1,8 @@
 ﻿using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
-
+[RequireComponent(typeof(Collider2D))]
 public class DirectedObstacleView : View
 {
     [SerializeField] private bool _isMoving;
@@ -22,6 +23,7 @@ public class DirectedObstacleView : View
 
     private IEnumerator StartMovement()
     {
+        yield return new WaitForSeconds(_delay);
         while (true)
         {
             _presenter.Move(transform.position, _movementSpeed);
@@ -29,15 +31,35 @@ public class DirectedObstacleView : View
         }
     }
 
-    private IEnumerator StartMovementOnDelay()
+    private void OnBecameVisible()
     {
-        yield return new WaitForSeconds(_delay);
         StartCoroutine(StartMovement());
     }
 
-    private void OnBecameVisible()
+    private void OnDrawGizmos()
     {
-        StartCoroutine(StartMovementOnDelay());
+        Gizmos.color = Color.red;
+        BoxCollider2D collider = GetComponent<BoxCollider2D>();
+        if (collider != null)
+        {
+            if (_movementDirection == MovementDirection.up)
+            {
+                Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y + _movementDistance), collider.bounds.size);
+            }
+            if (_movementDirection == MovementDirection.down)
+            {
+                Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y - _movementDistance), collider.bounds.size);
+            }
+            if (_movementDirection == MovementDirection.right)
+            {
+                Gizmos.DrawWireCube(new Vector2(transform.position.x + _movementDistance, transform.position.y), collider.bounds.size);
+            }
+            if (_movementDirection == MovementDirection.left)
+            {
+                Gizmos.DrawWireCube(new Vector2(transform.position.x - _movementDistance, transform.position.y), collider.bounds.size);
+            }
+        }
+        
     }
 }
 
