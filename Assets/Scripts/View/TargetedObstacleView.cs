@@ -12,7 +12,7 @@ public class TargetedObstacleView : View
 
     private void Awake()
     {
-        _model = new TargetedObstacleModel(transform.position, _target.position, this);
+        _model = new TargetedObstacleModel(transform.position, this);
         _presenter = new TargetedObstaclePresenter(_model);
     }
 

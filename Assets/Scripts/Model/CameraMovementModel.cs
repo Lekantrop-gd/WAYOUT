@@ -1,19 +1,8 @@
 using UnityEngine;
 
-public class CameraMovementModel
+public class CameraMovementModel : ObstacleModel
 {
-    private View _view;
-    private Vector3 _position;
-
-    public CameraMovementModel(View view, Vector3 position)
+    public CameraMovementModel(Vector3 positoin, View view) : base(positoin, view)
     {
-        _view = view;
-        _position = position;
-    }
-
-    public void SetPosition(Vector3 position)
-    {
-        _position = position;
-        _view.UpdateView(_position);
     }
 }

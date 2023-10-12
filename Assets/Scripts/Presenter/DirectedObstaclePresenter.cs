@@ -35,6 +35,6 @@ class DirectedObstaclePresenter
 
     public void Move(Vector3 startPosition, float movementSpeed)
     {
-        _model.SetObstaclePosition(Vector3.MoveTowards(startPosition, _targetPosition, Time.deltaTime * movementSpeed));
+        _model.SetPosition(Vector3.MoveTowards(startPosition, _targetPosition, Time.deltaTime * movementSpeed));
     }
 }

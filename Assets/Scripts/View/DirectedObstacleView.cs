@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -16,7 +15,7 @@ public class DirectedObstacleView : View
 
     private void Awake()
     {
-        _model = new DirectedObstacleModel(this, transform.position);
+        _model = new DirectedObstacleModel(transform.position, this);
         _presenter = new DirectedObstaclePresenter(_model);
         _presenter.InitializeMove(_movementDirection, transform.position, _movementDistance);
     }

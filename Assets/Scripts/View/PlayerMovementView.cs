@@ -10,7 +10,7 @@ public class PlayerMovementView : View
 
     private void Awake()
     {
-        _model = new PlayerMovementModel(this, transform.position);
+        _model = new PlayerMovementModel(transform.position, this);
         _presenter = new PlayerMovementPresenter(_model);
     }
 

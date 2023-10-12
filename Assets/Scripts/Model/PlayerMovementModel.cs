@@ -1,19 +1,8 @@
 using UnityEngine;
 
-public class PlayerMovementModel
+public class PlayerMovementModel : ObstacleModel
 {
-    private View _view;
-    private Vector3 _playerPosition;
-
-    public PlayerMovementModel(View view, Vector3 playerPosition)
+    public PlayerMovementModel(Vector3 positoin, View view) : base(positoin, view)
     {
-        _view = view;
-        _playerPosition = playerPosition;
-    }
-
-    public void SetPosition(Vector3 playerPosition)
-    {
-        _playerPosition = playerPosition;
-        _view.UpdateView(playerPosition);
     }
 }

@@ -1,19 +1,8 @@
 ﻿using UnityEngine;
 
-class DirectedObstacleModel
+class DirectedObstacleModel : ObstacleModel
 {
-    public View _view;
-    private Vector3 _obstaclePosition;
-
-    public DirectedObstacleModel(View obstacleView, Vector3 obstaclePosition)
+    public DirectedObstacleModel(Vector3 positoin, View view) : base(positoin, view)
     {
-        _view = obstacleView;
-        _obstaclePosition = obstaclePosition;
-    }
-
-    public void SetObstaclePosition(Vector3 obstaclePosition)
-    {
-        _obstaclePosition = obstaclePosition;
-        _view.UpdateView(obstaclePosition);
     }
 }

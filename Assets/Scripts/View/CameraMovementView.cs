@@ -11,7 +11,7 @@ public class CameraMovementView : View
 
     private void Awake()
     {
-        _model = new CameraMovementModel(this, transform.position);
+        _model = new CameraMovementModel(transform.position, this);
         _presenter = new CameraMovementPresenter(_model);
     }
 
