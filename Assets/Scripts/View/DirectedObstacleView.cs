@@ -5,6 +5,7 @@ using UnityEngine;
 public class DirectedObstacleView : View
 {
     [SerializeField] private bool _isMoving;
+    [SerializeField] private bool _isLooped;
     [SerializeField] private MovementDirection _movementDirection;
     [SerializeField] private float _movementDistance;
     [SerializeField] private float _movementSpeed;
@@ -17,7 +18,7 @@ public class DirectedObstacleView : View
     {
         _model = new DirectedObstacleModel(transform.position, this);
         _presenter = new DirectedObstaclePresenter(_model);
-        _presenter.InitializeMove(_movementDirection, transform.position, _movementDistance);
+        _presenter.InitializeMovement(_movementDirection, transform.position, _movementDistance, _isLooped);
     }
 
     private IEnumerator StartMovement()
@@ -38,8 +39,8 @@ public class DirectedObstacleView : View
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        BoxCollider2D collider = GetComponent<BoxCollider2D>();
-        if (collider != null)
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null && _isMoving)
         {
             if (_movementDirection == MovementDirection.up)
             {

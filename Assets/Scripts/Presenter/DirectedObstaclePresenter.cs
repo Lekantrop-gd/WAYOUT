@@ -2,16 +2,23 @@
 
 class DirectedObstaclePresenter
 {
+    private MovementDirection _movementDirection;
     private DirectedObstacleModel _model;
     private Vector3 _targetPosition;
+    private float _movementDistance;
+    private bool _isLooped;
 
     public DirectedObstaclePresenter(DirectedObstacleModel model)
     {
         _model = model;
     }
 
-    public void InitializeMove(MovementDirection _movementDirection, Vector3 startPosition, float movementDistance)
+    public void InitializeMovement(MovementDirection movementDirection, Vector3 startPosition, float movementDistance, bool isLooped)
     {
+        _movementDirection = movementDirection;
+        _movementDistance = movementDistance;
+        _isLooped = isLooped;
+
         if (_movementDirection == MovementDirection.up)
         {
             _targetPosition = new Vector3(startPosition.x, startPosition.y + movementDistance, startPosition.z);
@@ -35,6 +42,29 @@ class DirectedObstaclePresenter
 
     public void Move(Vector3 startPosition, float movementSpeed)
     {
+        if (_isLooped)
+        {
+            if (startPosition == _targetPosition)
+            {
+                if (_movementDirection == MovementDirection.up)
+                {
+                    InitializeMovement(MovementDirection.down, startPosition, movementSpeed, _isLooped);
+                }
+                else if (_movementDirection == MovementDirection.down)
+                {
+                    InitializeMovement(MovementDirection.up, startPosition, movementSpeed, _isLooped);
+                }
+                else if (_movementDirection == MovementDirection.left)
+                {
+                    InitializeMovement(MovementDirection.right, startPosition, movementSpeed, _isLooped);
+                }
+                else if (_movementDirection == MovementDirection.right)
+                {
+                    InitializeMovement(MovementDirection.left, startPosition, movementSpeed, _isLooped);
+                }
+            }
+        }
+
         _model.SetPosition(Vector3.MoveTowards(startPosition, _targetPosition, Time.deltaTime * movementSpeed));
     }
 }
