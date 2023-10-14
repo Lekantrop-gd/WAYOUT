@@ -33,7 +33,10 @@ public class DirectedObstacleView : View
 
     private void OnBecameVisible()
     {
-        StartCoroutine(StartMovement());
+        if (_isMoving)
+        {
+            StartCoroutine(StartMovement());
+        }
     }
 
     private void OnDrawGizmos()
