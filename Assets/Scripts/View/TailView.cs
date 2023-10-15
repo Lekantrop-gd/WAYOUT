@@ -12,12 +12,20 @@ public class TailView : View
     private Vector3[] _tailPoses;
     private Vector3[] _tailVelocity;
 
+    public int TailLenght { get { return _tailLenght; } }
+
     private void Awake()
     {
+        Initialize(_tailLenght);
+    }
+
+    public void Initialize(int tailLenght)
+    {
         _lineRenderer = GetComponent<LineRenderer>();
-        _lineRenderer.positionCount = _tailLenght;
-        _tailPoses = new Vector3[_tailLenght];
-        _tailVelocity = new Vector3[_tailLenght];
+        _lineRenderer.positionCount = tailLenght;
+        _tailVelocity = new Vector3[tailLenght];
+        _tailPoses = new Vector3[tailLenght];
+        _tailLenght = tailLenght;
     }
 
     private void Update()
