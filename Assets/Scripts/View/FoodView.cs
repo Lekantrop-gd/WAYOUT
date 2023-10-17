@@ -8,7 +8,7 @@ public class FoodView : MonoBehaviour
         if (player == true)
         {
             var tail = collision.transform.GetChild(0).GetComponent<TailView>();
-            tail.Initialize(tail.TailLenght + 1);
+            tail.AddTailElement(tail.TailLenght + 1);
             Destroy(gameObject);
         }
     }

@@ -25,7 +25,7 @@ public class TargetedObstacleView : View
         }
     }
 
-    public override void UpdateView(Vector3 position)
+    public void UpdateView(Vector3 position)
     {
         transform.position = position;
         if ( _isLoooped )

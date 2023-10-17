@@ -14,6 +14,6 @@ public abstract class ObstacleModel
     public virtual void SetPosition(Vector3 position)
     {
         _positoin = position;
-        _view.UpdateView(position);
+        //_view.UpdateView(position);
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
@@ -9,23 +10,29 @@ public class TailView : View
     [SerializeField] private float _smoothSpeed;
 
     private LineRenderer _lineRenderer;
+    
     private Vector3[] _tailPoses;
     private Vector3[] _tailVelocity;
 
-    public int TailLenght { get { return _tailLenght; } }
-
     private void Awake()
     {
-        Initialize(_tailLenght);
+        _lineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer.positionCount = _tailLenght;
+<<<<<<< HEAD
+        _tailVelocity = new Vector3[_tailLenght];
+        _tailPoses = new Vector3[_tailLenght];
     }
 
-    public void Initialize(int tailLenght)
+    public void AddTailElement(int tailLenght)
     {
-        _lineRenderer = GetComponent<LineRenderer>();
-        _lineRenderer.positionCount = tailLenght;
-        _tailVelocity = new Vector3[tailLenght];
-        _tailPoses = new Vector3[tailLenght];
         _tailLenght = tailLenght;
+        _lineRenderer.positionCount = _tailLenght;
+        _tailVelocity = new Vector3[_tailLenght];
+        _tailPoses = new Vector3[_tailLenght];
+=======
+        _tailPoses = new Vector3[_tailLenght];
+        _tailVelocity = new Vector3[_tailLenght];
+>>>>>>> parent of 4ce7a6b (A lot of different sh*t)
     }
 
     private void Update()

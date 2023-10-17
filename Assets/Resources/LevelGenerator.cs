@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LevelGeneration : MonoBehaviour
+public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private ChunkInfo[] _chunksInfo;
     [SerializeField] private int _numberOfChunks;
