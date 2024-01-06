@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMovementView : View
 {
+    [SerializeField] private Camera _camera;
     [SerializeField] private float _verticalSpeed;
     [SerializeField] private float _horizontalSpeed;
 
@@ -16,7 +17,7 @@ public class PlayerMovementView : View
 
     private void Update()
     {
-        Vector3 pointerPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 pointerPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         _presenter.Move(pointerPosition, transform.position, _verticalSpeed, _horizontalSpeed);
     }
 }

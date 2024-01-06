@@ -5,7 +5,6 @@ public class ObstacleTrigger : MonoBehaviour
 {
     [SerializeField] private UnityEvent _onTriggerReached;
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerMovementView player = collision.gameObject.GetComponent<PlayerMovementView>();
