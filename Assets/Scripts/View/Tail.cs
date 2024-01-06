@@ -1,8 +1,7 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
-public class TailView : View
+public class Tail : View
 {
     [SerializeField] private Transform _joint;
     [SerializeField] private int _tailLenght;
@@ -10,23 +9,22 @@ public class TailView : View
     [SerializeField] private float _smoothSpeed;
 
     private LineRenderer _lineRenderer;
-    
     private Vector3[] _tailPoses;
     private Vector3[] _tailVelocity;
-
+    
     public int TailLenght { get { return _tailLenght; } }
-
-    private void Awake()
+    
+    public void AddTailElement(int tailLenght)
     {
-        _lineRenderer = GetComponent<LineRenderer>();
+        _tailLenght = tailLenght;
         _lineRenderer.positionCount = _tailLenght;
         _tailVelocity = new Vector3[_tailLenght];
         _tailPoses = new Vector3[_tailLenght];
     }
 
-    public void AddTailElement(int tailLenght)
+    private void Awake()
     {
-        _tailLenght = tailLenght;
+        _lineRenderer = GetComponent<LineRenderer>();
         _lineRenderer.positionCount = _tailLenght;
         _tailVelocity = new Vector3[_tailLenght];
         _tailPoses = new Vector3[_tailLenght];

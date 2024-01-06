@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class CameraMovementView : View
+public class CameraView : View
 {
     [SerializeField] private View _player;
     [SerializeField] private float _offset;
     [SerializeField] private float _speed;
 
-    private CameraMovementModel _model;
-    private CameraMovementPresenter _presenter;
+    private CameraModel _model;
+    private CameraPresenter _presenter;
 
     private void Awake()
     {
-        _model = new CameraMovementModel(transform.position, this);
-        _presenter = new CameraMovementPresenter(_model);
+        _model = new CameraModel(transform.position, this);
+        _presenter = new CameraPresenter(_model);
     }
 
     private void Update()
@@ -25,6 +25,6 @@ public class CameraMovementView : View
         Camera camera = Camera.main;
         float halfHeight = camera.orthographicSize;
         float halfWidth = camera.aspect * halfHeight;
-        Gizmos.DrawWireCube(transform.position, new Vector3(transform.position.x + halfWidth * 2, transform.position.y + 1000000000));
+        Gizmos.DrawWireCube(transform.position, new Vector3(transform.position.x + halfWidth * 2, transform.position.y / 0));
     }
 }

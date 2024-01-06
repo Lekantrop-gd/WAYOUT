@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
-using UnityEngine.UIElements;
 
-public class TargetedObstacleModel : ObstacleModel
+public class TargetedObstacleModel : Model
 {
-    private Vector3 _startPosition;
-    private Vector3 _endPosition;
+    public Vector3 StartPosition { get; private set; }
+    public Vector3 EndPosition { get ; private set; }
 
-    public TargetedObstacleModel(Vector3 positoin, View view) : base(positoin, view)
-    {
+    public TargetedObstacleModel(View view, Vector3 startPosition, Vector3 endPosition) : base(startPosition, view) 
+    { 
+        StartPosition = startPosition;
+        EndPosition = endPosition;
     }
-
-    public Vector3 StartPosition { get => _startPosition; }
-    public Vector3 EndPosition { get => _endPosition; }
 }

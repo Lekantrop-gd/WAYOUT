@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 
-class DirectedObstacleModel : ObstacleModel
+class DirectedObstacleModel : Model
 {
-    public DirectedObstacleModel(Vector3 positoin, View view) : base(positoin, view)
-    {
-    }
+    public DirectedObstacleModel(Vector3 positoin, View view) : base(positoin, view) { }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class TargetedObstacleView : View
+public class TargetedObstacleView : ObstacleView
 {
     [SerializeField] private Transform _target;
     [SerializeField] private float _speed;
@@ -12,22 +12,23 @@ public class TargetedObstacleView : View
 
     private void Awake()
     {
-        _model = new TargetedObstacleModel(transform.position, this);
-        _presenter = new TargetedObstaclePresenter(_model);
+        _model = new TargetedObstacleModel(this, transform.position, _target.position);
+        _presenter = new TargetedObstaclePresenter(_model, _speed);
     }
 
     private IEnumerator StartMoving()
     {
         while (true)
         {
-            _presenter.Move(transform.position, _target.position, _speed);
-            yield return new WaitForEndOfFrame();
+            _presenter.Move(transform.position, _target.position);
+            yield return null;
         }
     }
 
     public override void UpdateView(Vector3 position)
     {
         transform.position = position;
+        
         if ( _isLoooped )
         {
             if (position == _model.EndPosition)

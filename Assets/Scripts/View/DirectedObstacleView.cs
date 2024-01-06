@@ -2,9 +2,9 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class DirectedObstacleView : View
+public class DirectedObstacleView : ObstacleView
 {
-    [SerializeField] private bool _isMoving;
+    [SerializeField] private bool _isMoveable;
     [SerializeField] private bool _isLooped;
     [SerializeField] private MovementDirection _movementDirection;
     [SerializeField] private float _movementDistance;
@@ -27,13 +27,13 @@ public class DirectedObstacleView : View
         while (true)
         {
             _presenter.Move(transform.position, _movementSpeed);
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
     }
 
     private void OnBecameVisible()
     {
-        if (_isMoving)
+        if (_isMoveable)
         {
             StartCoroutine(StartMovement());
         }
@@ -43,33 +43,21 @@ public class DirectedObstacleView : View
     {
         Gizmos.color = Color.red;
         Collider2D collider = GetComponent<Collider2D>();
-        if (collider != null && _isMoving)
+        
+        if (collider != null && _isMoveable)
         {
             if (_movementDirection == MovementDirection.up)
-            {
                 Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y + _movementDistance), collider.bounds.size);
-            }
+            
             if (_movementDirection == MovementDirection.down)
-            {
                 Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y - _movementDistance), collider.bounds.size);
-            }
+            
             if (_movementDirection == MovementDirection.right)
-            {
                 Gizmos.DrawWireCube(new Vector2(transform.position.x + _movementDistance, transform.position.y), collider.bounds.size);
-            }
+            
             if (_movementDirection == MovementDirection.left)
-            {
                 Gizmos.DrawWireCube(new Vector2(transform.position.x - _movementDistance, transform.position.y), collider.bounds.size);
-            }
         }
         
     }
-}
-
-enum MovementDirection
-{
-    up,
-    down,
-    left,
-    right
 }
