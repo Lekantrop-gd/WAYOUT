@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class CameraMovementModel : Model
+public class CameraMovementModel : ObstacleModel
 {
-    public CameraMovementModel(Vector3 positoin) : base(positoin) { }
+    public CameraMovementModel(Vector3 positoin, View view) : base(positoin, view)
+    {
+    }
 }
