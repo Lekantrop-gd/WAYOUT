@@ -26,12 +26,13 @@ public class PlayerView : View
     {
         if (collision.gameObject.TryGetComponent<Food>(out var food))
         {
+            _tail.IncreaseLenght();
             Destroy(food.gameObject);
         }
 
-        if (collision.gameObject.TryGetComponent<ObstacleView>(out var obstacle))
+        if (collision.gameObject.TryGetComponent<ObstacleView>(out var obstacle)) 
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); //This line should be derived to level manager class
         }
     }
 }

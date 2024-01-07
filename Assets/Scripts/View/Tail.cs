@@ -3,42 +3,40 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class Tail : View
 {
-    [SerializeField] private Transform _joint;
-    [SerializeField] private int _tailLenght;
-    [SerializeField] private float _targetDistance;
-    [SerializeField] private float _smoothSpeed;
-
-    private LineRenderer _lineRenderer;
-    private Vector3[] _tailPoses;
-    private Vector3[] _tailVelocity;
+    [SerializeField] private Transform _head;
+    [SerializeField] private int _startLenght;
+    [SerializeField] private float _followingSpeed;
     
-    public int TailLenght { get { return _tailLenght; } }
-    
-    public void AddTailElement(int tailLenght)
-    {
-        _tailLenght = tailLenght;
-        _lineRenderer.positionCount = _tailLenght;
-        _tailVelocity = new Vector3[_tailLenght];
-        _tailPoses = new Vector3[_tailLenght];
-    }
+    private LineRenderer _tail;
+    private Vector3[] _tailElements;
 
     private void Awake()
     {
-        _lineRenderer = GetComponent<LineRenderer>();
-        _lineRenderer.positionCount = _tailLenght;
-        _tailVelocity = new Vector3[_tailLenght];
-        _tailPoses = new Vector3[_tailLenght];
+        _tail = GetComponent<LineRenderer>();
+        _tail.positionCount = _startLenght;
+        
+        _tailElements = new Vector3[_startLenght];
+        _tail.GetPositions(_tailElements);
     }
 
     private void Update()
     {
-        _tailPoses[0] = _joint.position;
+        _tailElements[0] = _head.position;
 
-        for (int i = 1; i < _tailPoses.Length; i++)
+        for (int x = 1; x < _tailElements.Length; x++)
         {
-            _tailPoses[i] = Vector3.SmoothDamp(_tailPoses[i], _tailPoses[i - 1] + _joint.right * _targetDistance, ref _tailVelocity[i], _smoothSpeed);
+            _tailElements[x] = Vector3.Lerp(_tailElements[x], _tailElements[x - 1], Time.deltaTime * _followingSpeed);
         }
 
-        _lineRenderer.SetPositions(_tailPoses);
+        _tail.SetPositions(_tailElements);
+    }
+
+    public void IncreaseLenght()
+    {
+        _tail.positionCount++;
+        _tail.SetPosition(_tail.positionCount - 1, _tail.GetPosition(_tail.positionCount - 2));
+        
+        _tailElements = new Vector3[_tail.positionCount];
+        _tail.GetPositions(_tailElements);
     }
 }

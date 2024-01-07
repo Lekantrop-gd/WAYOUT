@@ -16,15 +16,6 @@ public class TargetedObstacleView : ObstacleView
         _presenter = new TargetedObstaclePresenter(_model, _speed);
     }
 
-    private IEnumerator StartMoving()
-    {
-        while (true)
-        {
-            _presenter.Move(transform.position, _target.position);
-            yield return null;
-        }
-    }
-
     public override void UpdateView(Vector3 position)
     {
         transform.position = position;

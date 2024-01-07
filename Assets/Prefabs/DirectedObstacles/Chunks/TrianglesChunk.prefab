@@ -234,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 190763040748340268, guid: 80a8bb4bfaa0aff47926ada80566a348, type: 3}
       propertyPath: _isMoveable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 190763040748340268, guid: 80a8bb4bfaa0aff47926ada80566a348, type: 3}
       propertyPath: _movementSpeed
@@ -314,7 +314,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3210153038355979175, guid: 80a8bb4bfaa0aff47926ada80566a348, type: 3}
-    - {fileID: 190763040748340268, guid: 80a8bb4bfaa0aff47926ada80566a348, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -342,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 190763040748340268, guid: 80a8bb4bfaa0aff47926ada80566a348, type: 3}
       propertyPath: _isMoveable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 190763040748340268, guid: 80a8bb4bfaa0aff47926ada80566a348, type: 3}
       propertyPath: _movementSpeed
@@ -414,7 +413,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3210153038355979175, guid: 80a8bb4bfaa0aff47926ada80566a348, type: 3}
-    - {fileID: 190763040748340268, guid: 80a8bb4bfaa0aff47926ada80566a348, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

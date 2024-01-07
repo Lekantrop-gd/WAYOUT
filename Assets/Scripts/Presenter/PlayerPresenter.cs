@@ -13,9 +13,9 @@ public class PlayerPresenter
         _horizontalSpeed = horizontalSpeed;
     }
 
-    public void Move(Vector3 startPosition, Vector3 endPosition)
+    public void Move(Vector3 startPosition, Vector3 targetPosition)
     {
-        Vector3 target = new Vector3(endPosition.x, startPosition.y + _verticalSpeed);
+        Vector3 target = new Vector3(targetPosition.x, startPosition.y + _verticalSpeed);
 
         Vector3 position = Vector3.MoveTowards(startPosition, target, _horizontalSpeed * Time.deltaTime);
         

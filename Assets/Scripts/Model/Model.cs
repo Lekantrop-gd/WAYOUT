@@ -2,8 +2,8 @@
 
 public abstract class Model
 {
-    private Vector3 _position;
     private View _view;
+    private Vector3 _position;
 
     public Model(Vector3 positoin, View view)
     {
@@ -14,6 +14,6 @@ public abstract class Model
     public virtual void SetPosition(Vector3 position)
     {
         _position = position;
-        _view.UpdateView(position);
+        _view.UpdateView(_position);
     }
 }

@@ -52,6 +52,8 @@ class DirectedObstaclePresenter
             }
         }
 
-        _model.SetPosition(Vector3.MoveTowards(startPosition, _targetPosition, Time.deltaTime * movementSpeed));
+        Vector3 target = Vector3.MoveTowards(startPosition, _targetPosition, Time.deltaTime * movementSpeed);
+        
+        _model.SetPosition(target);
     }
 }
