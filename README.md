@@ -7,7 +7,9 @@ WAYOUT is a hyper-casual game prototype based on the runner mechanic. Navigate a
 - **Universal Snake-like Movement:** Utilizes LineRenderer and a custom script for a realistic 'tail' movement. Feel free to use this script in your projects.
 
 ### Project Details
-While still in early stages, this project shows potential for growth. Screenshots are available below.
+While still in early stages, this project shows potential for growth. 
+Find an APK build for your Android device [right here](https://drive.google.com/drive/folders/1645CjAVQyJVAbmJiCwQ3LM6HiskBPzRz?usp=sharing) for easy download and installation. 
+Screenshots are available below.
 
 #### Thanks for your interest in my work! Have a wonderful day! ❤️
 
